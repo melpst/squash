@@ -10,9 +10,13 @@ class SimpleGame(object):
         
     def run(self):
         self.init()
+        while True:
+            self.update()
+            self.render()
+            self.clock.tick(self.fps)
 
     def init(self):
-        self.game_init()
+        self.__game_init()
 
     def update(self):
         pass
@@ -20,7 +24,7 @@ class SimpleGame(object):
     def render(self):
         pass
 
-    def game_init(self):
+    def __game_init(self):
         pygame.init()
         self.clock = pygame.time.Clock()
         self.surface = pygame.display.set_mode(self.window_size)
